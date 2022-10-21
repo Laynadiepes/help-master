@@ -3,11 +3,14 @@ import 'package:help_projeto/data/autonomos_data.dart';
 import 'package:help_projeto/models/autonomoModel.dart';
 import 'package:help_projeto/models/avaliacaoModel.dart';
 import 'package:help_projeto/models/servicoModel.dart';
+import 'package:intl/intl.dart';
 
-class AutonomoApi extends ChangeNotifier {
+class AutonomoApi with ChangeNotifier {
   final List<AutonomoModel> _autonomos = autonomosData;
 
   List<AutonomoModel> get autonomos => [..._autonomos];
+
+  List<AutonomoModel> get avaliacoes => [..._autonomos];
 
   List<AutonomoModel> get favoriteAutonomos =>
       _autonomos.where((aut) => aut.isFavorite).toList();
@@ -18,24 +21,31 @@ class AutonomoApi extends ChangeNotifier {
 
   List<AvaliacaoModel> buscarAvaliacaoPorIdAutonomo(String id) {
     AutonomoModel autonomo = _autonomos.where((aut) => aut.id == id).first;
-    _avaliacoes = autonomo.avaliacao.toList();
     return autonomo.avaliacao.toList();
   }
 
-  List<AvaliacaoModel>? _avaliacoes;
-
-  List<AvaliacaoModel>? get avaliacoes => _avaliacoes;
-
-  updateAvaliacoes(List<AvaliacaoModel> avaliacoes) {
-    _avaliacoes = avaliacoes;
-    notifyListeners();
+  List<AutonomoModel> buscarAutonomo(String dado) {
+    List<AutonomoModel> autonomos =
+        _autonomos.where((aut) => aut.nomeCompleto.contains(dado)).toList();
+    return autonomos;
   }
 
-  clearAvaliacoes() {
-    if (_avaliacoes != null) {
-      _avaliacoes!.clear();
-    }
+  void criarAvaliacao(String comentario, String idAutonomo, double estrelas) {
+    var avaliacao = AvaliacaoModel(
+      userName: 'Layna Diepes',
+      userProfileImage: 'assets/layna.jpeg',
+      comentario: comentario,
+      idAutonomo: idAutonomo,
+      estrelas: estrelas.toInt(),
+      data: DateFormat(' d/MM/yyyy').format(DateTime.now()),
+    );
+    adicionarAvalicaoPorAutonomo(avaliacao);
+  }
 
+  void adicionarAvalicaoPorAutonomo(AvaliacaoModel avaliacao) {
+    AutonomoModel autonomo =
+        _autonomos.where((aut) => aut.id == avaliacao.idAutonomo).first;
+    autonomo.avaliacao.add(avaliacao);
     notifyListeners();
   }
 }

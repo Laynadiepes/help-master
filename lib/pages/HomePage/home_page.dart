@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:help_projeto/pages/ConfirmacaoAgendamentoPage/ConfirmacaoAgendamento_Page.dart';
 import 'package:help_projeto/pages/FavoritosPage/favoritos_page.dart';
 import 'package:help_projeto/pages/PerfilPage/perfil_page.dart';
 import 'package:help_projeto/utils/constants.dart';
@@ -11,8 +8,7 @@ import '../../components/autonomosPopulares_lista.dart';
 import '../../components/categories_lista.dart';
 import '../../components/ultimosAgendamentos_lista.dart';
 import '../../data/categories_data.dart';
-import '../../models/categoryModel.dart';
-import '../../utils/routes.dart';
+import '../../models/autonomoApi.dart';
 import '../AgendamentosPage/agendamentos_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -76,9 +72,12 @@ class _HomePageState extends State<HomePage> {
 class HomePageComponent extends StatelessWidget {
   const HomePageComponent({Key? key}) : super(key: key);
 
+  void buscar() {}
+
   @override
   Widget build(BuildContext context) {
     final List loadedCategories = categoriesData;
+    final providerAutonomo = Provider.of<AutonomoApi>(context);
 
     return Scaffold(
       appBar: AppBar(

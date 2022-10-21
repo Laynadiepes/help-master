@@ -24,7 +24,7 @@ class AutonomoCard extends StatelessWidget {
               ),
             ),
             subtitle: Text(autonomo.profissao),
-            trailing: Container(
+            trailing: SizedBox(
                 width: 80,
                 child: Row(
                   children: [

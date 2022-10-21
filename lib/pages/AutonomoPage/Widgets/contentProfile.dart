@@ -165,7 +165,26 @@ class ContentProfile extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        // Avaliacao()
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 8),
+                const Text('Avaliações',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                        fontSize: subtitleFontSize)),
+                const SizedBox(height: 12),
+                Avaliacao(
+                  idAutonomo: autonomo.id,
+                )
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }

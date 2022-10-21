@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:help_projeto/pages/AutonomoPage/Widgets/avaliacao.dart';
+import 'package:help_projeto/utils/constants.dart';
 import 'package:provider/provider.dart';
 
 import 'Widgets/contentProfile.dart';
@@ -24,6 +25,7 @@ class AutonomoPerfil extends StatelessWidget {
             TopProfile(autonomo.urlPerfil),
             ChangeNotifierProvider.value(
                 value: autonomo, child: const ContentProfile()),
+            const SizedBox(height: 8),
           ]),
     );
   }

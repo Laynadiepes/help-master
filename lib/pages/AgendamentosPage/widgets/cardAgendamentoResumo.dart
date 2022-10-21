@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:help_projeto/models/agendamentoModel.dart';
 import 'package:help_projeto/pages/AgendamentosPage/widgets/reagendamentoDialog.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../models/agendamentoApi.dart';
 import '../../../models/autonomoApi.dart';
 import '../../../utils/constants.dart';
-import '../../../utils/routes.dart';
 
 class CardAgendamentoResumo extends StatelessWidget {
   const CardAgendamentoResumo(
@@ -23,6 +22,11 @@ class CardAgendamentoResumo extends StatelessWidget {
   final String textAcao;
   final String titleBotao;
   final String acao;
+
+  // void getGaleria() async {
+  //   var fileName = await ImagePicker()
+
+  // }
 
   void _showDialogReagendamento(
       BuildContext context, AgendamentoModel agendamento) {
@@ -66,6 +70,85 @@ class CardAgendamentoResumo extends StatelessWidget {
     );
   }
 
+  void _showDialogAvaliacao(
+      BuildContext context, AutonomoApi provider, String idAutonomo) {
+    double estrelas = 1;
+    String comentario = '';
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Avaliação"),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    "Qual seu nível de satisfação com o serviço?",
+                    style: TextStyle(color: textColor),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                  child: RatingBar.builder(
+                      minRating: 1,
+                      itemBuilder: ((context, index) => const Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          )),
+                      onRatingUpdate: (es) => {estrelas = es}),
+                ),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxHeight: 150),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Fale um pouco sobre sua experiência',
+                        hintStyle: TextStyle(fontSize: 14)),
+                    style: const TextStyle(color: textColor, fontSize: 14),
+                    maxLines: null,
+                    maxLength: 150,
+                    onSaved: (newValue) => comentario = newValue!,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () => {},
+                      icon: const Icon(
+                        Icons.file_upload_outlined,
+                        color: textColor,
+                      ),
+                    ),
+                    const Text(
+                      'Adicionar Fotos/Vídeos',
+                      style: TextStyle(color: textColor),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+                child: const Text("Fechar"),
+                onPressed: () => Navigator.of(context).pop()),
+            TextButton(
+              child: const Text("Salvar"),
+              onPressed: () {
+                provider.criarAvaliacao(comentario, idAutonomo, estrelas);
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final providerAutonomo = Provider.of<AutonomoApi>(context);
@@ -82,13 +165,11 @@ class CardAgendamentoResumo extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    child: Image.asset(
-                      width: 70,
-                      height: 70,
-                      agendamento.servicoAgendado.urlImagem,
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image.asset(
+                    width: 70,
+                    height: 70,
+                    agendamento.servicoAgendado.urlImagem,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 const SizedBox(
@@ -185,8 +266,9 @@ class CardAgendamentoResumo extends StatelessWidget {
                         if (acao == "cancelarAgendamento") {
                           _showDialogCancelar(context, provider);
                         }
-                        if (acao == "AvaliarAgendamento") {
-                          // provider.cancelarAgendamento(agendamento);
+                        if (acao == "avaliarAgendamento") {
+                          _showDialogAvaliacao(context, providerAutonomo,
+                              agendamento.servicoAgendado.idAutonomo);
                         }
                         if (acao == "Reagendar") {
                           _showDialogReagendamento(context, agendamento);

@@ -25,4 +25,4 @@ const followers = 159525;
 const following = 5834;
 
 const String firstImage =
-    "https://static.vecteezy.com/ti/vetor-gratis/p3/2198952-aquarela-pessego-bege-fundo-para-papel-design-vetor.jpg";
+    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.magazineluiza.com.br%2Fpapel-de-parede-adesivo-liso-salmao-fosco-contact%2Fp%2Fkh67f6k33k%2Fde%2Fppac%2F&psig=AOvVaw0YxOEn2LWU4NrqinRITQfM&ust=1666380078523000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCLiOmNfD7_oCFQAAAAAdAAAAABAQ";

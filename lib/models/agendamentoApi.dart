@@ -13,7 +13,7 @@ class AgendamentoApi with ChangeNotifier {
 
   List<AgendamentoModel> _agendamentosCancelados = [];
 
-  List<AgendamentoModel> _agendamentosFinalizados = [];
+  List<AgendamentoModel> _agendamentosFinalizados = agendamentosFinalizadosData;
 
   List<AgendamentoModel> get agendamentos {
     return [..._agendamentos];
