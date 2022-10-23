@@ -31,7 +31,7 @@ class ConfirmacaoAgendamentoPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Confimacao de agendamento"),
+        title: const Text("Confimação de agendamento"),
       ),
       body: Column(
         children: [

@@ -17,7 +17,7 @@ class TopProfile extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Container(
-              margin: EdgeInsets.only(bottom: bottom),
+              margin: const EdgeInsets.only(bottom: bottom),
               child: buildCoverImage()),
           Positioned(
             top: top,
@@ -30,8 +30,8 @@ class TopProfile extends StatelessWidget {
 Widget buildCoverImage() {
   return Container(
     color: primary,
-    child: Image.network(
-      firstImage,
+    child: Image.asset(
+      'assets/logo.png',
       width: double.infinity,
       height: coverHeight,
       fit: BoxFit.cover,

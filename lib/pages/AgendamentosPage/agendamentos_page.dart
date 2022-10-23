@@ -18,6 +18,7 @@ class AgendamentosPage extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 8,
           bottom: const TabBar(
+            indicatorColor: Colors.white,
             tabs: [
               Tab(text: 'Agendados'),
               Tab(text: 'Finalizados'),

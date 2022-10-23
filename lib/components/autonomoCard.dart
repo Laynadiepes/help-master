@@ -29,13 +29,19 @@ class AutonomoCard extends StatelessWidget {
                 child: Row(
                   children: [
                     autonomo.isFavorite
-                        ? const Icon(
-                            Icons.favorite,
-                            color: subTextColor,
+                        ? InkWell(
+                            onTap: () => autonomo.toggleFavorite(),
+                            child: const Icon(
+                              Icons.favorite,
+                              color: subTextColor,
+                            ),
                           )
-                        : const Icon(
-                            Icons.favorite_border,
-                            color: subTextColor,
+                        : InkWell(
+                            onTap: () => autonomo.toggleFavorite(),
+                            child: const Icon(
+                              Icons.favorite_border,
+                              color: subTextColor,
+                            ),
                           ),
                     const SizedBox(
                       width: 25,

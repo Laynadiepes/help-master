@@ -142,21 +142,19 @@ class ContentProfile extends StatelessWidget {
                         fontSize: subtitleFontSize)),
                 const SizedBox(height: 12),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     TagCompetencia(value: 'Competência1'),
-                    SizedBox(width: 10),
                     TagCompetencia(value: 'Competência2'),
-                    SizedBox(width: 10),
                     TagCompetencia(value: 'Competência3'),
                   ],
                 ),
                 const SizedBox(height: 12),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     TagCompetencia(value: 'Competência4'),
-                    SizedBox(width: 10),
                     TagCompetencia(value: 'Competência5'),
-                    SizedBox(width: 10),
                     TagCompetencia(value: 'Competência6'),
                   ],
                 )

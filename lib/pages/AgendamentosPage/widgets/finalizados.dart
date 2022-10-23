@@ -30,7 +30,7 @@ class Finalizados extends StatelessWidget {
           itemBuilder: (ctx, i) => CardAgendamentoResumo(
               agendamento: agendamentos[i],
               textAcao: " A cada avaliação você ganha 5 pontos help",
-              titleBotao: "Avalie",
+              titleBotao: "Avaliar",
               acao: "avaliarAgendamento"));
     }
   }

@@ -102,7 +102,7 @@ class CardAgendamentoResumo extends StatelessWidget {
                 ),
                 ConstrainedBox(
                   constraints: const BoxConstraints(maxHeight: 150),
-                  child: TextFormField(
+                  child: TextField(
                     decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Fale um pouco sobre sua experiência',
@@ -110,7 +110,7 @@ class CardAgendamentoResumo extends StatelessWidget {
                     style: const TextStyle(color: textColor, fontSize: 14),
                     maxLines: null,
                     maxLength: 150,
-                    onSaved: (newValue) => comentario = newValue!,
+                    onChanged: (newValue) => {comentario = newValue},
                   ),
                 ),
                 Row(

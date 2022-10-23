@@ -35,21 +35,23 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
-          // ignore: prefer_const_literals_to_create_immutables
-          items: [
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+          backgroundColor: Color.fromARGB(255, 255, 241, 229),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+              ),
               label: "Home",
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.favorite_border),
               label: "Favoritos",
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.check_box_outlined),
               label: "Agendamentos",
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(Icons.account_box_outlined),
               label: "Perfil",
             ),

@@ -16,6 +16,7 @@ class FavoritosPage extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 8,
           bottom: const TabBar(
+            indicatorColor: Colors.white,
             tabs: [
               Tab(text: 'Autônomos'),
               Tab(text: 'Serviços'),

@@ -39,34 +39,43 @@ class Avaliacao extends StatelessWidget {
           return Column(
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    avaliacoes[index].userName,
-                    style: const TextStyle(color: Colors.black),
+                  Flexible(
+                    flex: 1,
+                    fit: FlexFit.tight,
+                    child: Text(
+                      avaliacoes[index].userName,
+                      style: const TextStyle(color: Colors.black),
+                    ),
                   ),
-                  const SizedBox(
-                    width: 4,
+                  Flexible(
+                    flex: 2,
+                    fit: FlexFit.tight,
+                    child: Row(
+                      children: buildEstrelas(avaliacoes[index].estrelas),
+                    ),
                   ),
-                  Row(
-                    children: buildEstrelas(avaliacoes[index].estrelas),
-                  ),
-                  const SizedBox(
-                    width: 100,
-                  ),
-                  Text(
-                    avaliacoes[index].data,
-                    style: const TextStyle(color: textColor, fontSize: 12),
+                  Flexible(
+                    flex: 1,
+                    fit: FlexFit.tight,
+                    child: Text(
+                      avaliacoes[index].data,
+                      style: const TextStyle(color: textColor, fontSize: 12),
+                    ),
                   )
                 ],
               ),
               const SizedBox(
                 height: 8,
               ),
-              Text(
-                avaliacoes[index].comentario,
-                style: const TextStyle(
-                  color: textColor,
+              SizedBox(
+                width: 500,
+                child: Text(
+                  avaliacoes[index].comentario,
+                  style: const TextStyle(
+                    color: textColor,
+                  ),
+                  textAlign: TextAlign.start,
                 ),
               ),
               const Divider(
