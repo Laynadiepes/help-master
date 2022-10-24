@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:help_projeto/models/agendamentoApi.dart';
-import 'package:help_projeto/models/autonomoApi.dart';
-import 'package:help_projeto/models/servicosFavApi.dart';
+import 'package:help_projeto/models/agendamentoService.dart';
+import 'package:help_projeto/models/autonomoService.dart';
+import 'package:help_projeto/models/servicosFavService.dart';
 import 'package:help_projeto/pages/AgendamentosPage/agendamentos_page.dart';
 import 'package:help_projeto/pages/AutonomoPage/autonomo_perfil.dart';
 import 'package:help_projeto/pages/ConfirmacaoAgendamentoPage/ConfirmacaoAgendamento_Page.dart';
 import 'package:help_projeto/pages/FavoritosPage/favoritos_page.dart';
+import 'package:help_projeto/pages/HomePage/widgets/listaEncontrada.dart';
 import 'package:help_projeto/pages/PerfilPage/perfil_page.dart';
 import 'package:help_projeto/pages/ServicosPorCategoriaPage/category_page.dart';
 import 'package:help_projeto/pages/ChatPage/chat_page.dart';
@@ -30,13 +31,13 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => AutonomoApi(),
+          create: (_) => AutonomoService(),
         ),
         ChangeNotifierProvider(
-          create: (_) => AgendamentoApi(),
+          create: (_) => AgendamentoService(),
         ),
         ChangeNotifierProvider(
-          create: (_) => ServicoApi(),
+          create: (_) => ServicoService(),
         ),
       ],
       child: MaterialApp(
@@ -71,6 +72,7 @@ class MyApp extends StatelessWidget {
           Routes.agendamentos: (ctx) => AgendamentosPage(),
           Routes.favoritos: (ctx) => FavoritosPage(),
           Routes.perfil: (ctx) => const PerfilPage(),
+          Routes.listaEncontrada: (ctx) => const ListaEncontradaPage(),
         },
       ),
     );

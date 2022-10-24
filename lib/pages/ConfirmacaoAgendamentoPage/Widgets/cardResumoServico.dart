@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:help_projeto/models/agendamentoApi.dart';
+import 'package:help_projeto/models/agendamentoService.dart';
 import 'package:help_projeto/models/agendamentoModel.dart';
-import 'package:help_projeto/models/autonomoApi.dart';
+import 'package:help_projeto/models/autonomoService.dart';
 import 'package:help_projeto/pages/ConfirmacaoAgendamentoPage/Widgets/containerInfo.dart';
 import 'package:help_projeto/utils/constants.dart';
 import 'package:intl/intl.dart';
@@ -26,7 +26,7 @@ class CardResumoServico extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AutonomoApi>(context);
+    final provider = Provider.of<AutonomoService>(context);
     final autonomo =
         provider.buscarAutonomoPorId(agendamento.servicoAgendado.idAutonomo);
     return Card(

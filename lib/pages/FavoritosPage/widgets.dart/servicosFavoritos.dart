@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
-import 'package:help_projeto/models/servicosFavApi.dart';
+import 'package:help_projeto/models/servicosFavService.dart';
 import 'package:provider/provider.dart';
 
 import '../../../components/servicoCard.dart';
-import '../../../models/autonomoApi.dart';
+import '../../../models/autonomoService.dart';
 import '../../../models/autonomoModel.dart';
 import '../../../models/servicoModel.dart';
 import '../../../utils/constants.dart';
@@ -16,7 +16,7 @@ class ServicosFavoritos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<ServicoApi>(context);
+    final provider = Provider.of<ServicoService>(context);
     final servicosFavoritos = provider.servicosFavoritos.values.toList();
     if (servicosFavoritos.isEmpty) {
       return const Padding(

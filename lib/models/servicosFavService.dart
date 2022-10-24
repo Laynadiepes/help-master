@@ -3,7 +3,7 @@ import 'package:help_projeto/data/autonomos_data.dart';
 import 'package:help_projeto/models/autonomoModel.dart';
 import 'package:help_projeto/models/servicoModel.dart';
 
-class ServicoApi with ChangeNotifier {
+class ServicoService with ChangeNotifier {
   Map<String, ServicoModel> _servicosFavoritos = {};
 
   Map<String, ServicoModel> get servicosFavoritos {

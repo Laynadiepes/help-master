@@ -7,7 +7,7 @@ import 'package:help_projeto/pages/ConfirmacaoAgendamentoPage/Widgets/confirmaca
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/agendamentoApi.dart';
+import '../../models/agendamentoService.dart';
 import '../../models/servicoModel.dart';
 import 'Widgets/cardMetodoPagamento.dart';
 
@@ -27,7 +27,7 @@ class ConfirmacaoAgendamentoPage extends StatelessWidget {
     AgendamentoModel agendamento =
         ModalRoute.of(context)!.settings.arguments as AgendamentoModel;
 
-    final AgendamentoApi provider = Provider.of(context);
+    final AgendamentoService provider = Provider.of(context);
 
     return Scaffold(
       appBar: AppBar(

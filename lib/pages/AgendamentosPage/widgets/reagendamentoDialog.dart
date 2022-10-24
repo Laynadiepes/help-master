@@ -8,7 +8,7 @@ import 'package:help_projeto/utils/constants.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../../models/agendamentoApi.dart';
+import '../../../models/agendamentoService.dart';
 import '../../../utils/routes.dart';
 
 class ReagendamentoDialog extends StatefulWidget {
@@ -18,7 +18,7 @@ class ReagendamentoDialog extends StatefulWidget {
   final AgendamentoModel agendamento;
 
   void _showDialogConfirmarReagendamento(BuildContext context,
-      AgendamentoModel agendamento, AgendamentoApi provider) {
+      AgendamentoModel agendamento, AgendamentoService provider) {
     showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -98,7 +98,7 @@ class _ReagendamentoDialogState extends State<ReagendamentoDialog> {
 
   @override
   Widget build(BuildContext context) {
-    final AgendamentoApi agendamento = Provider.of(context);
+    final AgendamentoService agendamento = Provider.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [

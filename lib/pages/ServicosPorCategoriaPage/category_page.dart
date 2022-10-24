@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:help_projeto/data/autonomos_data.dart';
-import 'package:help_projeto/models/autonomoApi.dart';
+import 'package:help_projeto/models/autonomoService.dart';
 import 'package:help_projeto/models/autonomoModel.dart';
 import '../../components/autonomoCard.dart';
 import '../../models/categoryModel.dart';
@@ -12,7 +12,7 @@ class CategoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AutonomoApi>(context);
+    final provider = Provider.of<AutonomoService>(context);
     final List<AutonomoModel> loadedAutonomos = provider.autonomos;
     final CategoryModel category =
         ModalRoute.of(context)!.settings.arguments as CategoryModel;
@@ -26,6 +26,7 @@ class CategoryPage extends StatelessWidget {
         title: Text(category.title),
       ),
       body: ListView.builder(
+        scrollDirection: Axis.vertical,
         itemCount: automatosCategoria.length,
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
           value: automatosCategoria[i],

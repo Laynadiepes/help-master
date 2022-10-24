@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:help_projeto/models/agendamentoApi.dart';
+import 'package:help_projeto/models/agendamentoService.dart';
 import 'package:help_projeto/models/agendamentoModel.dart';
 import 'package:help_projeto/pages/AgendamentosPage/widgets/cardAgendamentoResumo.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../../models/autonomoApi.dart';
+import '../../../models/autonomoService.dart';
 import '../../../utils/constants.dart';
 
 class Agendados extends StatelessWidget {
@@ -15,7 +15,7 @@ class Agendados extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AgendamentoApi>(context);
+    final provider = Provider.of<AgendamentoService>(context);
     final agendamentos = provider.agendamentos;
 
     if (agendamentos.isEmpty) {

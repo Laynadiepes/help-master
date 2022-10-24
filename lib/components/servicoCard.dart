@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:help_projeto/models/agendamentoModel.dart';
-import 'package:help_projeto/models/servicosFavApi.dart';
+import 'package:help_projeto/models/servicosFavService.dart';
 import 'package:provider/provider.dart';
 
-import '../models/agendamentoApi.dart';
+import '../models/agendamentoService.dart';
 import '../models/servicoModel.dart';
 import '../utils/constants.dart';
 import '../utils/routes.dart';
@@ -73,8 +73,8 @@ class _ServicoCardState extends State<ServicoCard> {
   @override
   Widget build(BuildContext context) {
     final servico = Provider.of<ServicoModel>(context);
-    final favoritaServico = Provider.of<ServicoApi>(context);
-    final AgendamentoApi agendamento = Provider.of(context);
+    final favoritaServico = Provider.of<ServicoService>(context);
+    final AgendamentoService agendamento = Provider.of(context);
 
     return Card(
       child: Row(

@@ -6,7 +6,7 @@ import 'package:help_projeto/pages/AutonomoPage/Widgets/avaliacao.dart';
 import 'package:help_projeto/pages/AutonomoPage/Widgets/tag.dart';
 import 'package:provider/provider.dart';
 
-import '../../../models/autonomoApi.dart';
+import '../../../models/autonomoService.dart';
 import '../../../models/autonomoModel.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/routes.dart';

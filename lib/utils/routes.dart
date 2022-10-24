@@ -8,4 +8,5 @@ class Routes {
   static const agendamentos = '/agendamentos';
   static const favoritos = '/FavoritosPage';
   static const perfil = '/perfil';
+  static const listaEncontrada = '/listaEncontrada';
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:help_projeto/models/agendamentoApi.dart';
+import 'package:help_projeto/models/agendamentoService.dart';
 import 'package:help_projeto/models/agendamentoModel.dart';
 import 'package:provider/provider.dart';
 
-import '../models/autonomoApi.dart';
+import '../models/autonomoService.dart';
 import '../models/categoryModel.dart';
 import '../utils/constants.dart';
 import '../utils/routes.dart';
@@ -13,7 +13,7 @@ class AutonomosPopulares extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<AutonomoApi>(context);
+    var provider = Provider.of<AutonomoService>(context);
     var autonomos = provider.autonomos;
 
     return SizedBox(

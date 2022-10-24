@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
-import 'package:help_projeto/models/autonomoApi.dart';
+import 'package:help_projeto/models/autonomoService.dart';
 import 'package:help_projeto/utils/constants.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +28,7 @@ class Avaliacao extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AutonomoApi>(context);
+    final provider = Provider.of<AutonomoService>(context);
     final avaliacoes = provider.buscarAvaliacaoPorIdAutonomo(idAutonomo);
 
     return ListView.builder(

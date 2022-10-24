@@ -6,8 +6,8 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../models/agendamentoApi.dart';
-import '../../../models/autonomoApi.dart';
+import '../../../models/agendamentoService.dart';
+import '../../../models/autonomoService.dart';
 import '../../../utils/constants.dart';
 
 class CardAgendamentoResumo extends StatelessWidget {
@@ -43,7 +43,7 @@ class CardAgendamentoResumo extends StatelessWidget {
         });
   }
 
-  void _showDialogCancelar(BuildContext context, AgendamentoApi provider) {
+  void _showDialogCancelar(BuildContext context, AgendamentoService provider) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -71,7 +71,7 @@ class CardAgendamentoResumo extends StatelessWidget {
   }
 
   void _showDialogAvaliacao(
-      BuildContext context, AutonomoApi provider, String idAutonomo) {
+      BuildContext context, AutonomoService provider, String idAutonomo) {
     double estrelas = 1;
     String comentario = '';
     showDialog(
@@ -151,8 +151,8 @@ class CardAgendamentoResumo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final providerAutonomo = Provider.of<AutonomoApi>(context);
-    final provider = Provider.of<AgendamentoApi>(context);
+    final providerAutonomo = Provider.of<AutonomoService>(context);
+    final provider = Provider.of<AgendamentoService>(context);
 
     return Padding(
       padding: const EdgeInsets.all(8.0),

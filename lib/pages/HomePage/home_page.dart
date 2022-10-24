@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:help_projeto/models/autonomoModel.dart';
 import 'package:help_projeto/pages/FavoritosPage/favoritos_page.dart';
+import 'package:help_projeto/pages/HomePage/widgets/busca.dart';
 import 'package:help_projeto/pages/PerfilPage/perfil_page.dart';
 import 'package:help_projeto/utils/constants.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +10,7 @@ import '../../components/autonomosPopulares_lista.dart';
 import '../../components/categories_lista.dart';
 import '../../components/ultimosAgendamentos_lista.dart';
 import '../../data/categories_data.dart';
-import '../../models/autonomoApi.dart';
+import '../../models/autonomoService.dart';
 import '../AgendamentosPage/agendamentos_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -79,7 +81,6 @@ class HomePageComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List loadedCategories = categoriesData;
-    final providerAutonomo = Provider.of<AutonomoApi>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -104,24 +105,8 @@ class HomePageComponent extends StatelessWidget {
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            // ignore: prefer_const_literals_to_create_immutables
             children: [
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Busca',
-                    prefixIcon: Icon(Icons.search),
-                    suffixIcon: Icon(Icons.filter_list_rounded),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              const Busca(),
               const SizedBox(
                 height: 10,
               ),

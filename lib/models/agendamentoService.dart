@@ -8,7 +8,7 @@ import 'package:help_projeto/models/servicoModel.dart';
 
 import '../data/agendamentos_data.dart';
 
-class AgendamentoApi with ChangeNotifier {
+class AgendamentoService with ChangeNotifier {
   List<AgendamentoModel> _agendamentos = agendamentosData;
 
   List<AgendamentoModel> _agendamentosCancelados = [];

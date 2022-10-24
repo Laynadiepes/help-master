@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:help_projeto/models/agendamentoApi.dart';
+import 'package:help_projeto/models/agendamentoService.dart';
 import 'package:help_projeto/utils/constants.dart';
 import 'package:provider/provider.dart';
 

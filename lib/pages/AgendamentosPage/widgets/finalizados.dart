@@ -3,8 +3,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 
-import '../../../models/agendamentoApi.dart';
-import '../../../models/autonomoApi.dart';
+import '../../../models/agendamentoService.dart';
+import '../../../models/autonomoService.dart';
 import '../../../utils/constants.dart';
 import 'cardAgendamentoResumo.dart';
 
@@ -13,7 +13,7 @@ class Finalizados extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AgendamentoApi>(context);
+    final provider = Provider.of<AgendamentoService>(context);
     final agendamentos = provider.agendamentosFinalizados;
     if (agendamentos.isEmpty) {
       return const Padding(

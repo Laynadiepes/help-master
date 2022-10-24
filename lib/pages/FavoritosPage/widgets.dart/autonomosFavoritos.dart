@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../../../components/autonomoCard.dart';
-import '../../../models/autonomoApi.dart';
+import '../../../models/autonomoService.dart';
 import '../../../models/autonomoModel.dart';
 import '../../../utils/constants.dart';
 import '../../ServicosPorCategoriaPage/category_page.dart';
@@ -15,7 +15,7 @@ class AutonomosFavoritos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<AutonomoApi>(context);
+    final provider = Provider.of<AutonomoService>(context);
 
     final List<AutonomoModel> favoritos = provider.favoriteAutonomos;
     if (favoritos.isEmpty) {

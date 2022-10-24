@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:help_projeto/models/agendamentoApi.dart';
+import 'package:help_projeto/models/agendamentoService.dart';
 import 'package:help_projeto/models/agendamentoModel.dart';
 import 'package:help_projeto/utils/constants.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +12,7 @@ class UltimosAgendamentos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var provider = Provider.of<AgendamentoApi>(context);
+    var provider = Provider.of<AgendamentoService>(context);
     var agendamentos = provider.agendamentos;
 
     return SizedBox(
