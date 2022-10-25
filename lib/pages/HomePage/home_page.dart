@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:help_projeto/models/autonomoModel.dart';
 import 'package:help_projeto/pages/FavoritosPage/favoritos_page.dart';
 import 'package:help_projeto/pages/HomePage/widgets/busca.dart';
+import 'package:help_projeto/pages/HomePage/widgets/carrossel.dart';
 import 'package:help_projeto/pages/PerfilPage/perfil_page.dart';
 import 'package:help_projeto/utils/constants.dart';
 import 'package:provider/provider.dart';
@@ -147,16 +148,7 @@ class HomePageComponent extends StatelessWidget {
               ),
               AutonomosPopulares(),
               const Padding(
-                padding: EdgeInsets.only(left: 12),
-                child: Text(
-                  'GANHE PONTOS HELP',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: subTextColor,
-                  ),
-                ),
-              ),
+                  padding: EdgeInsets.only(left: 12), child: Carrossel()),
             ],
           ),
         ),
