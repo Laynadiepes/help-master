@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:help_projeto/components/autonomoCard.dart';
 import 'package:help_projeto/models/autonomoModel.dart';
 import 'package:provider/provider.dart';
 
-import '../../../components/autonomoCard.dart';
+import '../../../components/servicoCard.dart';
+import '../../../models/servicoModel.dart';
 import '../../../utils/constants.dart';
 
-class ListaAutonomosBusca extends StatelessWidget {
-  const ListaAutonomosBusca({super.key, required this.autonomos});
+class ListaServicosBusca extends StatelessWidget {
+  const ListaServicosBusca({super.key, required this.servicos});
 
-  final List<AutonomoModel> autonomos;
+  final List<ServicoModel> servicos;
 
   @override
   Widget build(BuildContext context) {
-    if (autonomos.isEmpty) {
+    if (servicos.isEmpty) {
       return const Padding(
         padding: EdgeInsets.only(top: 100),
         child: Text(
@@ -23,10 +25,10 @@ class ListaAutonomosBusca extends StatelessWidget {
       );
     } else {
       return ListView.builder(
-        itemCount: autonomos.length,
+        itemCount: servicos.length,
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-          value: autonomos[i],
-          child: AutonomoCard(),
+          value: servicos[i],
+          child: ServicoCard(),
         ),
       );
     }

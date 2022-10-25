@@ -28,7 +28,7 @@ class AutonomoService with ChangeNotifier {
 
   List<AutonomoModel> buscarAutonomosPorIdCategoria(String id) {
     List<AutonomoModel> autonomos =
-        _autonomos.where((aut) => aut.id == id).toList();
+        _autonomos.where((aut) => aut.idCategoria == id).toList();
     return autonomos;
   }
 
@@ -63,6 +63,13 @@ class AutonomoService with ChangeNotifier {
       autonomosCategoria = buscarAutonomosPorIdCategoria(categoria.id);
       autonomos.addAll(autonomosCategoria);
     }
+
+    //Busca autonomos por profissão
+    List<AutonomoModel> autonomosProfissao = _autonomos
+        .where(
+            (aut) => aut.profissao.toLowerCase().contains(dado.toLowerCase()))
+        .toList();
+    autonomos.addAll(autonomosProfissao);
 
     //Busca autonomos por serviço
     List<AutonomoModel> autonomosServicos = [];
