@@ -17,7 +17,7 @@ class AutonomosPopulares extends StatelessWidget {
     var autonomos = provider.autonomos;
 
     return SizedBox(
-        height: 120,
+        height: 110,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView(
@@ -32,7 +32,7 @@ class AutonomosPopulares extends StatelessWidget {
                     children: [
                       GestureDetector(
                         child: CircleAvatar(
-                          radius: 30,
+                          radius: 32,
                           backgroundImage: AssetImage(
                             autonomo.urlPerfil,
                           ),

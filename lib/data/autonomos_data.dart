@@ -55,7 +55,7 @@ final autonomosData = [
           idAutonomo: '1',
           titulo: 'Serviços de bordado',
           descricao:
-              'O servico de bordado é customizavel, ou seja seré de acordo com o que for combinado',
+              'O servico de bordado é customizavel, ou seja será cobrado de acordo com o orçamento realizado por chat',
           urlImagem: 'assets/ziper.jpeg',
           valor: 0.00,
         ),
@@ -191,6 +191,132 @@ final autonomosData = [
         AvaliacaoModel(
             userName: 'Leticia paiva',
             idAutonomo: '3',
+            userProfileImage: 'assets/lohana.jpeg',
+            urlImagem: 'assets/vestido.pnj',
+            comentario:
+                'Tinha um vestido que queria muuito para uma festa, e a maria fez exatamente igual a foto que mandei, estou apaixonada por ele. Não largo mais a maria como costureira rsrsrs',
+            estrelas: 5,
+            data: '10/08/2022'),
+      ]),
+  AutonomoModel(
+      id: '4',
+      nomeCompleto: 'Lohana Malini',
+      sobre:
+          'Possuo 8 anos de experiência com faxina. Realizo desde serviços leves até os mais pesados. Além de faxina também passo, cozinho e organizo armários',
+      urlPerfil: 'assets/lohana.jpeg',
+      profissao: 'Faxineira',
+      idCategoria: '6',
+      estrelas: 4.9,
+      servico: [
+        ServicoModel(
+          id: '1',
+          idAutonomo: '4',
+          titulo: 'Faxina até 150 m2',
+          descricao: 'Limpeza geral para residências pequenas',
+          urlImagem: 'assets/faxina.jpeg',
+          valor: 150.00,
+        ),
+        ServicoModel(
+          id: '2',
+          idAutonomo: '4',
+          titulo: 'Faxina até 250 m2',
+          descricao: 'Limpeza geral para residências médias',
+          urlImagem: 'assets/faxina.jpg',
+          valor: 220.00,
+        ),
+        ServicoModel(
+          id: '3',
+          idAutonomo: '4',
+          titulo: 'Faxina mais de 250 m2',
+          descricao: 'Limpeza geral para residências grandes',
+          urlImagem: 'assets/faxina.jpeg',
+          valor: 400.00,
+        ),
+        ServicoModel(
+          id: '4',
+          idAutonomo: '4',
+          titulo: 'Organização de armários',
+          descricao: 'Organizo todos os armários da casa',
+          urlImagem: 'assets/organizado.jpeg',
+          valor: 200.00,
+        ),
+      ],
+      avaliacao: [
+        AvaliacaoModel(
+            userName: 'Luiz Silva',
+            idAutonomo: '4',
+            userProfileImage: 'assets/lohana.jpeg',
+            urlImagem: 'assets/vestido.pnj',
+            comentario:
+                'Tinha um vestido que queria muuito para uma festa, e a maria fez exatamente igual a foto que mandei, estou apaixonada por ele. Não largo mais a maria como costureira rsrsrs',
+            estrelas: 5,
+            data: '10/08/2022'),
+        AvaliacaoModel(
+            userName: 'Leticia paiva',
+            idAutonomo: '4',
+            userProfileImage: 'assets/lohana.jpeg',
+            urlImagem: 'assets/vestido.pnj',
+            comentario:
+                'Tinha um vestido que queria muuito para uma festa, e a maria fez exatamente igual a foto que mandei, estou apaixonada por ele. Não largo mais a maria como costureira rsrsrs',
+            estrelas: 5,
+            data: '10/08/2022'),
+      ]),
+  AutonomoModel(
+      id: '5',
+      nomeCompleto: 'Luiza Morgado',
+      sobre:
+          'Possuo 10 anos de experiência com ensino infantil (até o fundamental 2), Ensino o conteúdo necessário e passo uma série de exercícios',
+      urlPerfil: 'assets/luiza.png',
+      profissao: 'Professora',
+      idCategoria: '4',
+      estrelas: 5.0,
+      servico: [
+        ServicoModel(
+          id: '1',
+          idAutonomo: '5',
+          titulo: '1 hora de aula particular',
+          descricao: '1 hora/aula ensinando e realizando exercícios',
+          urlImagem: 'assets/ensino.jpeg',
+          valor: 150.00,
+        ),
+        ServicoModel(
+          id: '2',
+          idAutonomo: '5',
+          titulo: '1 hora de aula em grupo',
+          descricao: '1 hora/aula ensinando e realizando exercícios',
+          urlImagem: 'assets/ensino.jpg',
+          valor: 220.00,
+        ),
+        ServicoModel(
+          id: '3',
+          idAutonomo: '5',
+          titulo: '3 hora de aula em grupo',
+          descricao: '3 hora/aula ensinando e realizando exercícios',
+          urlImagem: 'assets/ensino.jpeg',
+          valor: 400.00,
+        ),
+        ServicoModel(
+          id: '4',
+          idAutonomo: '5',
+          titulo: '3 hora de aula em grupo',
+          descricao: '3 hora/aula ensinando e realizando exercícios',
+          urlImagem: 'assets/ensino.jpeg',
+          valor: 470.00,
+        ),
+      ],
+      avaliacao: [
+        AvaliacaoModel(
+            userName: 'Luiz Silva',
+            idAutonomo: '5',
+            userProfileImage: 'assets/lohana.jpeg',
+            urlImagem: 'assets/vestido.pnj',
+            comentario:
+                'Tinha um vestido que queria muuito para uma festa, e a maria fez exatamente igual a foto que mandei, estou apaixonada por ele. Não largo mais a maria como costureira rsrsrs',
+            estrelas: 5,
+            data: '10/08/2022'),
+        AvaliacaoModel(
+            userName: 'Leticia paiva',
+            idAutonomo: '5',
             userProfileImage: 'assets/lohana.jpeg',
             urlImagem: 'assets/vestido.pnj',
             comentario:

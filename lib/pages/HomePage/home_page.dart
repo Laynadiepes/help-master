@@ -147,8 +147,7 @@ class HomePageComponent extends StatelessWidget {
                 ),
               ),
               AutonomosPopulares(),
-              const Padding(
-                  padding: EdgeInsets.only(left: 12), child: Carrossel()),
+              Carrossel(),
             ],
           ),
         ),

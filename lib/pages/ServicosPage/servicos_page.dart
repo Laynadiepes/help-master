@@ -27,7 +27,9 @@ class ServicosPage extends StatelessWidget {
             return Column(
               children: [
                 ChangeNotifierProvider.value(
-                    value: servico, child: ServicoCard())
+                  value: servico,
+                  child: ServicoCard(),
+                ),
               ],
             );
           }),
