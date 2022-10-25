@@ -31,9 +31,10 @@ class ReagendamentoDialog extends StatefulWidget {
                 TextButton(
                   onPressed: () {
                     provider.confirmarAgendamento(agendamento);
-                    Navigator.of(context)..popAndPushNamed(Routes.home);
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                        Routes.home, (Route<dynamic> route) => false);
                   },
-                  child: Text("Confirmar"),
+                  child: const Text("Confirmar"),
                 )
               ]);
         });

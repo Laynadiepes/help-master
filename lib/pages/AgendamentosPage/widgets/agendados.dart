@@ -34,7 +34,7 @@ class Agendados extends StatelessWidget {
           itemBuilder: (ctx, i) => CardAgendamentoResumo(
               agendamento: agendamentos[i],
               textAcao:
-                  " Esse serviço pode ser cancelado até ${DateFormat('d/MM/yyyy').format(agendamentos[i].dataHora.subtract(
+                  " É possível cancelar até ${DateFormat('d/MM/yyyy').format(agendamentos[i].dataHora.subtract(
                         const Duration(days: 1),
                       ))}",
               titleBotao: "Cancelar",

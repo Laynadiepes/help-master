@@ -257,24 +257,32 @@ class CardAgendamentoResumo extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    textAcao,
-                    style: const TextStyle(fontSize: 12, color: textColor),
+                  Flexible(
+                    flex: 6,
+                    fit: FlexFit.tight,
+                    child: Text(
+                      textAcao,
+                      style: const TextStyle(fontSize: 12, color: textColor),
+                    ),
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        if (acao == "cancelarAgendamento") {
-                          _showDialogCancelar(context, provider);
-                        }
-                        if (acao == "avaliarAgendamento") {
-                          _showDialogAvaliacao(context, providerAutonomo,
-                              agendamento.servicoAgendado.idAutonomo);
-                        }
-                        if (acao == "Reagendar") {
-                          _showDialogReagendamento(context, agendamento);
-                        }
-                      },
-                      child: Text(titleBotao))
+                  Flexible(
+                    flex: 3,
+                    fit: FlexFit.tight,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          if (acao == "cancelarAgendamento") {
+                            _showDialogCancelar(context, provider);
+                          }
+                          if (acao == "avaliarAgendamento") {
+                            _showDialogAvaliacao(context, providerAutonomo,
+                                agendamento.servicoAgendado.idAutonomo);
+                          }
+                          if (acao == "Reagendar") {
+                            _showDialogReagendamento(context, agendamento);
+                          }
+                        },
+                        child: Text(titleBotao)),
+                  )
                 ],
               ),
             )

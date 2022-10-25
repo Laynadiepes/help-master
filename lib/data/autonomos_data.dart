@@ -1,13 +1,12 @@
 import 'package:help_projeto/models/avaliacaoModel.dart';
 import 'package:help_projeto/models/servicoModel.dart';
-import 'package:help_projeto/pages/AutonomoPage/Widgets/avaliacao.dart';
 
 import '../models/autonomoModel.dart';
 
 final autonomosData = [
   AutonomoModel(
       id: '1',
-      nomeCompleto: 'Maria da Costa Santos',
+      nomeCompleto: 'Maria da Costa',
       sobre:
           'Sou costureira há mais de 20 anos, apaixonada por criar e desenhar novas roupas pois sei que e meu ponto forte, mas também realizo trabalhos como concertos de peças, bainhas e ajustes muito bem e com ótimos acabamentos nas roupas. Sou sempre elogiada pela minha organização com as entregas e compromisso com as clientes',
       profissao: 'Costureira',

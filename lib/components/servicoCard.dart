@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:help_projeto/models/agendamentoModel.dart';
 import 'package:help_projeto/models/servicosFavService.dart';
 import 'package:provider/provider.dart';
 
@@ -77,86 +74,97 @@ class _ServicoCardState extends State<ServicoCard> {
     final AgendamentoService agendamento = Provider.of(context);
 
     return Card(
-      child: Row(
-        children: [
-          Container(
-            width: 70,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image(
-                height: 60,
-                fit: BoxFit.cover,
-                image: AssetImage(
-                  servico.urlImagem,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Flexible(
+              flex: 2,
+              fit: FlexFit.tight,
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image(
+                    height: 60,
+                    fit: BoxFit.cover,
+                    image: AssetImage(
+                      servico.urlImagem,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Container(
-            width: 220,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  servico.titulo,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  servico.descricao,
-                  style: const TextStyle(
-                    color: textColor,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+            Flexible(
+              flex: 6,
+              fit: FlexFit.tight,
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'R\$ ' + servico.valor.toString(),
-                      style: const TextStyle(color: Colors.black),
-                    )
+                      servico.titulo,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      servico.descricao,
+                      style: const TextStyle(
+                        color: textColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'R\$ ' + servico.valor.toString(),
+                          style: const TextStyle(color: Colors.black),
+                        )
+                      ],
+                    ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
-          IconButton(
-            onPressed: (() => _selectDateTime(context).then((value) =>
-                Navigator.of(context).pushNamed(Routes.confirmacaoAgendamento,
-                    arguments:
-                        agendamento.criarAgendamento(dateTime, servico)))),
-            color: subTextColor,
-            focusColor: primary,
-            icon: Icon(Icons.calendar_month),
-          ),
-          IconButton(
-            onPressed: () {
-              servico.toggleFavorite();
-              if (servico.isFavorite) {
-                favoritaServico.addServicoFavorito(servico);
-              } else {
-                favoritaServico.removeServicoFavorito(servico.id);
-              }
-            },
-            color: subTextColor,
-            icon: servico.isFavorite
-                ? const Icon(Icons.favorite)
-                : const Icon(Icons.favorite_border),
-          )
-        ],
+            Flexible(
+              flex: 2,
+              fit: FlexFit.tight,
+              child: IconButton(
+                onPressed: (() => _selectDateTime(context).then((value) =>
+                    Navigator.of(context).pushNamed(
+                        Routes.confirmacaoAgendamento,
+                        arguments:
+                            agendamento.criarAgendamento(dateTime, servico)))),
+                color: subTextColor,
+                focusColor: primary,
+                icon: Icon(Icons.calendar_month),
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                servico.toggleFavorite();
+                if (servico.isFavorite) {
+                  favoritaServico.addServicoFavorito(servico);
+                } else {
+                  favoritaServico.removeServicoFavorito(servico.id);
+                }
+              },
+              color: subTextColor,
+              icon: servico.isFavorite
+                  ? const Icon(Icons.favorite)
+                  : const Icon(Icons.favorite_border),
+            )
+          ],
+        ),
       ),
     );
   }
