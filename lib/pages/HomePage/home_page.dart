@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
-          backgroundColor: Color.fromARGB(218, 230, 255, 253),
+          backgroundColor: Color.fromARGB(255, 245, 255, 255),
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
