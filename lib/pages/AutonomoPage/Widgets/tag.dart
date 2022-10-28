@@ -15,7 +15,7 @@ class TagCompetencia extends StatelessWidget {
       padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: Theme.of(context).colorScheme.secondary,
+        color: Color.fromARGB(119, 49, 175, 169),
       ),
       constraints: const BoxConstraints(
         minWidth: 50,

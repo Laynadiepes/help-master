@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
-          backgroundColor: Color.fromARGB(255, 255, 241, 229),
+          backgroundColor: Color.fromARGB(218, 230, 255, 253),
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
@@ -118,7 +118,7 @@ class HomePageComponent extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: subTextColor,
+                    color: textColor,
                   ),
                 ),
               ),
@@ -130,7 +130,7 @@ class HomePageComponent extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: subTextColor,
+                    color: textColor,
                   ),
                 ),
               ),
@@ -142,7 +142,7 @@ class HomePageComponent extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: subTextColor,
+                    color: textColor,
                   ),
                 ),
               ),
