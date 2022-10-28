@@ -31,7 +31,7 @@ Widget buildCoverImage() {
   return Container(
     color: primary,
     child: Image.asset(
-      'assets/logo.png',
+      'assets/fundo.png',
       width: double.infinity,
       height: coverHeight,
       fit: BoxFit.cover,

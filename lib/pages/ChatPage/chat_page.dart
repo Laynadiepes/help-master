@@ -20,7 +20,7 @@ class ChatPage extends StatelessWidget {
       body: Column(
         children: [
           const SizedBox(
-            height: 630,
+            height: 600,
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),

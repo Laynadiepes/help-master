@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 const Color textColor = Color.fromARGB(255, 100, 95, 95);
-const Color subTextColor = Color.fromRGBO(230, 113, 29, 100);
-const Color primary = Color.fromARGB(255, 230, 113, 29);
+const Color subTextColor =Color.fromARGB(131, 39, 173, 166);
+const Color primary = Color.fromARGB(248, 39, 173, 167);
 
 const double titleFontSize = 25;
 const double subtitleFontSize = 18;
