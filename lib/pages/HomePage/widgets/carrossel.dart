@@ -25,7 +25,7 @@ class Carrossel extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             image: const DecorationImage(
-              image: AssetImage("assets/promo.jpg"),
+              image: AssetImage("assets/promo.png"),
               fit: BoxFit.cover,
             ),
           ),

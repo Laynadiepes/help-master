@@ -45,7 +45,8 @@ class Avaliacao extends StatelessWidget {
                     fit: FlexFit.tight,
                     child: Text(
                       avaliacoes[index].userName,
-                      style: const TextStyle(color: Colors.black),
+                      style: const TextStyle(
+                          color: textColor, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Flexible(

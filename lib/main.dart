@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: tema.copyWith(
           colorScheme: tema.colorScheme.copyWith(
-            primary: Color.fromARGB(248, 39, 173, 167),
+            primary: Color.fromARGB(248, 173, 39, 171),
           ),
           textTheme: tema.textTheme.copyWith(
             headline6: const TextStyle(

@@ -33,7 +33,7 @@ class ContentProfile extends StatelessWidget {
           autonomo.profissao,
           style: const TextStyle(
               fontWeight: FontWeight.bold,
-              color: subTextColor,
+              color: textColor,
               fontSize: subtitleFontSize),
         ),
         const SizedBox(height: 8),
