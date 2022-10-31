@@ -20,7 +20,7 @@ class ConfirmacaoDialog extends StatelessWidget {
         TextButton(
             child: const Text("Ver Agendamento"),
             onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
-                Routes.home, (route) => false,
+                Routes.agendamentos, (route) => false,
                 arguments: 2)),
         TextButton(
           child: const Text("Continuar"),
