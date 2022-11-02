@@ -136,7 +136,7 @@ final autonomosData = [
       ]),
   AutonomoModel(
       id: '3',
-      nomeCompleto: 'Luana Alves Pereira',
+      nomeCompleto: 'Luana Alves',
       sobre:
           'Desde pequena sou apaixonada pela área da beleza, com 18 anos comecei minha carreira e atualmente com 7 anos de carreira possuo grande experiência com atendimento a todo tipo de público. Foco principal em coloração e a expressão individual e criativa de cliente, mantendo sempre a saúde e integridade dos fios.',
       urlPerfil: 'assets/luana.jpeg',

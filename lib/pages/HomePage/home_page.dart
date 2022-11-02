@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _selectedIndex,
-          backgroundColor: Color.fromARGB(255, 245, 255, 255),
+          backgroundColor: Color.fromARGB(255, 253, 245, 255),
           items: const [
             BottomNavigationBarItem(
               icon: Icon(
@@ -98,7 +98,14 @@ class HomePageComponent extends StatelessWidget {
                 child: const Text(
                   'Help Me',
                   style: TextStyle(fontSize: 24),
-                ))
+                )),
+            const SizedBox(
+              width: 210,
+            ),
+            const Icon(
+              Icons.notifications_none_outlined,
+              size: 26,
+            )
           ],
         ),
       ),

@@ -163,22 +163,22 @@ class CardAgendamentoResumo extends StatelessWidget {
           children: [
             Row(
               children: [
+                const SizedBox(
+                  width: 6,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(
-                    width: 70,
-                    height: 70,
+                    width: 80,
+                    height: 80,
                     agendamento.servicoAgendado.urlImagem,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
                 SizedBox(
-                  width: 260,
+                  width: 280,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -186,23 +186,28 @@ class CardAgendamentoResumo extends StatelessWidget {
                           agendamento.servicoAgendado.titulo,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 19,
                             color: textColor,
                           ),
                         ),
                         const SizedBox(
-                          height: 5,
+                          height: 8,
                         ),
                         Row(
                           children: [
                             const Icon(
                               Icons.calendar_month_outlined,
                               color: subTextColor,
+                              size: 32,
                             ),
                             Text(
                               DateFormat(' d/MM/yyyy')
                                   .format(agendamento.dataHora),
-                              style: const TextStyle(color: textColor),
+                              style: const TextStyle(
+                                color: textColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
                             ),
                             const SizedBox(
                               width: 20,
@@ -210,24 +215,32 @@ class CardAgendamentoResumo extends StatelessWidget {
                             const Icon(
                               Icons.access_time,
                               color: subTextColor,
+                              size: 32,
                             ),
                             Text(
                               DateFormat(' hh:mm').format(agendamento.dataHora),
-                              style: const TextStyle(color: textColor),
+                              style: const TextStyle(
+                                color: textColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
                             )
                           ],
                         ),
                         const SizedBox(
-                          height: 5,
+                          height: 8,
                         ),
                         Row(
                           children: [
+                            const SizedBox(
+                              width: 3,
+                            ),
                             const Icon(
                               Icons.monetization_on_outlined,
                               color: subTextColor,
                             ),
                             Text(
-                              " ${agendamento.servicoAgendado.valor}",
+                              " ${agendamento.servicoAgendado.valor.toStringAsFixed(2)}",
                               style: const TextStyle(color: textColor),
                             ),
                             const SizedBox(

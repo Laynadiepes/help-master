@@ -13,6 +13,8 @@ class AutonomoCard extends StatelessWidget {
     final autonomo = Provider.of<AutonomoModel>(context);
     return GestureDetector(
       child: Card(
+        shadowColor: subTextColor,
+        elevation: 4,
         child: ListTile(
             leading: CircleAvatar(
               backgroundImage: AssetImage(autonomo.urlPerfil),

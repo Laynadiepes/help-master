@@ -31,10 +31,22 @@ class AutonomosPopulares extends StatelessWidget {
                   child: Column(
                     children: [
                       GestureDetector(
-                        child: CircleAvatar(
-                          radius: 32,
-                          backgroundImage: AssetImage(
-                            autonomo.urlPerfil,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 8,
+                                  color: subTextColor,
+                                  spreadRadius: 1)
+                            ],
+                          ),
+                          child: CircleAvatar(
+                            radius: 32,
+                            backgroundImage: AssetImage(
+                              autonomo.urlPerfil,
+                            ),
                           ),
                         ),
                         onTap: () {
@@ -44,11 +56,14 @@ class AutonomosPopulares extends StatelessWidget {
                           );
                         },
                       ),
-                      Text(
-                        autonomo.profissao,
-                        style: const TextStyle(
-                          color: textColor,
-                          fontSize: 12,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(
+                          autonomo.profissao,
+                          style: const TextStyle(
+                            color: textColor,
+                            fontSize: 12,
+                          ),
                         ),
                       )
                     ],

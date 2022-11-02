@@ -12,7 +12,7 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 120,
+        height: 130,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView(
@@ -26,11 +26,14 @@ class CategoriesList extends StatelessWidget {
                     GestureDetector(
                       child: Card(
                         shadowColor: subTextColor,
-                        elevation: 5,
-                        child: SizedBox(
-                          width: 100,
-                          height: 70,
-                          child: Image.asset(ct.url, fit: BoxFit.fitHeight),
+                        elevation: 6,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 5, bottom: 5),
+                          child: SizedBox(
+                            width: 100,
+                            height: 70,
+                            child: Image.asset(ct.url, fit: BoxFit.fitHeight),
+                          ),
                         ),
                       ),
                       onTap: () {

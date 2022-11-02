@@ -33,7 +33,7 @@ class UltimosAgendamentos extends StatelessWidget {
                     GestureDetector(
                       child: Card(
                         shadowColor: subTextColor,
-                        elevation: 5,
+                        elevation: 6,
                         child: SizedBox(
                           height: 70,
                           width: 70,

@@ -74,6 +74,8 @@ class _ServicoCardState extends State<ServicoCard> {
     final AgendamentoService agendamento = Provider.of(context);
 
     return Card(
+      shadowColor: subTextColor,
+      elevation: 4,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
