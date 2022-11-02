@@ -176,7 +176,7 @@ class CardAgendamentoResumo extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 280,
+                  width: 260,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Column(
@@ -186,7 +186,7 @@ class CardAgendamentoResumo extends StatelessWidget {
                           agendamento.servicoAgendado.titulo,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 19,
+                            fontSize: 18,
                             color: textColor,
                           ),
                         ),
@@ -198,7 +198,7 @@ class CardAgendamentoResumo extends StatelessWidget {
                             const Icon(
                               Icons.calendar_month_outlined,
                               color: subTextColor,
-                              size: 32,
+                              size: 30,
                             ),
                             Text(
                               DateFormat(' d/MM/yyyy')
@@ -206,7 +206,7 @@ class CardAgendamentoResumo extends StatelessWidget {
                               style: const TextStyle(
                                 color: textColor,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                                fontSize: 16,
                               ),
                             ),
                             const SizedBox(
@@ -215,14 +215,14 @@ class CardAgendamentoResumo extends StatelessWidget {
                             const Icon(
                               Icons.access_time,
                               color: subTextColor,
-                              size: 32,
+                              size: 30,
                             ),
                             Text(
                               DateFormat(' hh:mm').format(agendamento.dataHora),
                               style: const TextStyle(
                                 color: textColor,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                                fontSize: 16,
                               ),
                             )
                           ],

@@ -100,7 +100,7 @@ class HomePageComponent extends StatelessWidget {
                   style: TextStyle(fontSize: 24),
                 )),
             const SizedBox(
-              width: 210,
+              width: 186,
             ),
             const Icon(
               Icons.notifications_none_outlined,
