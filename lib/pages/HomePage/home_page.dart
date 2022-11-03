@@ -114,7 +114,7 @@ class HomePageComponent extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const Busca(),
+              Busca(),
               const SizedBox(
                 height: 10,
               ),

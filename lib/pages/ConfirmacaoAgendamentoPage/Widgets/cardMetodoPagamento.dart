@@ -63,18 +63,21 @@ class CheckboxWidget extends StatefulWidget {
 class _CheckboxWidgetState extends State<CheckboxWidget> {
   @override
   Widget build(BuildContext context) {
-    return CheckboxListTile(
-      title: Text(
-        widget.item.texto,
-        style: TextStyle(color: textColor, fontSize: 16),
+    return SizedBox(
+      height: 35,
+      child: CheckboxListTile(
+        title: Text(
+          widget.item.texto,
+          style: TextStyle(color: textColor, fontSize: 16),
+        ),
+        value: widget.item.checked,
+        onChanged: (bool? value) {
+          setState(() {
+            widget.item.checked = value!;
+          });
+        },
+        activeColor: primary,
       ),
-      value: widget.item.checked,
-      onChanged: (bool? value) {
-        setState(() {
-          widget.item.checked = value!;
-        });
-      },
-      activeColor: primary,
     );
   }
 }
